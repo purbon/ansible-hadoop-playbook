@@ -1,0 +1,12 @@
+---
+- name: add the hadoop group
+  group: name=hadoop state=present
+- name: ensure we've a hadoop user
+  user:
+     name=hdu
+     comment="Hadoop user"
+     groups="hadoop,sudo"
+     system=yes
+     generate_ssh_key=yes
+- name: Add hadoop key to authorized ones
+  raw: cat /home/hdu/.ssh/id_rsa.pub >> /home/hdu/.ssh/authorized_keys

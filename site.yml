@@ -1,0 +1,17 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: root
+  become: true
+  roles:
+    - common
+
+- name: configure and deploy the hadoop cluster
+  hosts: hadoop
+  remote_user: root
+  become: true
+  roles:
+    - hadoop_common
+    - hadoop
