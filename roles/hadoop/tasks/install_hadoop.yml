@@ -1,9 +1,9 @@
 ---
 - name: install hadoop from remote source
   unarchive:
-      src="http://apache.mirror.iphh.net/hadoop/common/hadoop-{{hadoop_version}}/hadoop-{{hadoop_version}}.tar.gz"
+      src=pkg/hadoop-{{hadoop_version}}.tar.gz
       dest="/usr/local/"
-      copy=no
+      remote_src=no
       owner=hdu
       group=hadoop
 - name: setup symlink
