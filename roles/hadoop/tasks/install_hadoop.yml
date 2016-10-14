@@ -1,16 +1,16 @@
 ---
-- name: install hadoop from remote source
-  unarchive:
-      src=pkg/hadoop-{{hadoop_version}}.tar.gz
-      dest="/usr/local/"
-      remote_src=no
-      owner=hdu
-      group=hadoop
-- name: setup symlink
-  file:
-    src:  /usr/local/hadoop-{{ hadoop_version }}
-    dest: /usr/local/hadoop
-    state: link
+#- name: install hadoop from remote source
+#  unarchive:
+#      src=pkg/hadoop-{{hadoop_version}}.tar.gz
+#      dest="/usr/local/"
+#      remote_src=no
+#      owner=hdu
+#      group=hadoop
+#- name: setup symlink
+#  file:
+#    src:  /usr/local/hadoop-{{ hadoop_version }}
+#    dest: /usr/local/hadoop
+#    state: link
 - name: create the tmp directory for hdfs
   file: 
     path=/data/hadoop/tmp

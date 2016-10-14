@@ -2,6 +2,12 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-{% for item in groups['hadoop'] %}
+# Hadoop masters
+{% for item in groups['hadoop_master'] %}
+{{ item }} {{  hostvars[item]['hostname'] }}
+{% endfor %}
+
+# Hadoop slaves
+{% for item in groups['hadoop_slave'] %}
 {{ item }} {{  hostvars[item]['hostname'] }}
 {% endfor %}

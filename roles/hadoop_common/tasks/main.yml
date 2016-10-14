@@ -6,7 +6,9 @@
      name=hdu
      comment="Hadoop user"
      groups="hadoop,sudo"
-     system=yes
+     password={{hdu_pass}}
      generate_ssh_key=yes
 - name: Add hadoop key to authorized ones
   raw: cat /home/hdu/.ssh/id_rsa.pub >> /home/hdu/.ssh/authorized_keys
+- name: Set proper file perms to authorized_keys file
+  file: path=/home/hdu/.ssh/authorized_keys owner=hdu group=hadoop mode=0644

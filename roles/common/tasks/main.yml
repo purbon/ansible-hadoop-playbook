@@ -3,3 +3,5 @@
   template: src=templates/hosts.j2 dest=/etc/hosts
 - name: ensure default-jdk is at the latest version
   apt: name=default-jdk state=latest
+- name: ensure sshpass is at the latest version
+  apt: name=sshpass state=latest

@@ -8,10 +8,25 @@
   roles:
     - common
 
-- name: configure and deploy the hadoop cluster
-  hosts: hadoop
+- name: Deploy the hadoop master nodes
+  hosts: hadoop_master
   remote_user: root
   become: true
   roles:
     - hadoop_common
     - hadoop
+
+- name: configure and deploy the hadoop slaves nodes
+  hosts: hadoop_slave
+  remote_user: root
+  become: true
+  roles:
+    - hadoop_common
+    - hadoop
+
+- name: Config the hadoop master nodes
+  hosts: hadoop_master
+  remote_user: root
+  become: true
+  roles:
+    - hadoop_master
