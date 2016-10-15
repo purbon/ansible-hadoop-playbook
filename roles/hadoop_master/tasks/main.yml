@@ -1,18 +1,17 @@
 ---
-#- name: Setup the conf/masters file
-#  template: 
-#    src=masters.j2 
-#    dest=/usr/local/hadoop/etc/hadoop/masters
-#    owner=hdu
-#    group=hadoop
-#- name: Setup the conf/slaves file
-#  template: 
-#    src=slaves.j2 
-#    dest=/usr/local/hadoop/etc/hadoop/slaves
-#    owner=hdu
-#    group=hadoop
+- name: Setup the conf/masters file
+  template:
+    src=masters.j2
+    dest=/usr/local/hadoop/etc/hadoop/masters
+    owner=hdu
+    group=hadoop
+- name: Setup the conf/slaves file
+  template:
+    src=slaves.j2
+    dest=/usr/local/hadoop/etc/hadoop/slaves
+    owner=hdu
+    group=hadoop
 - name: Distribute the master SSH key to slave nodes
   command: sshpass -p voodoo ssh-copy-id -i /home/hdu/.ssh/id_rsa.pub -o StrictHostKeyChecking=no hdu@hadoop1
   become: yes
   become_user: hdu
-  when: hostname == "hadoop0"
