@@ -1,12 +1,12 @@
 ---
-#- name: Setup the conf/hdfs-site.xml file
-#  template: src=hdfs-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/hdfs-site.xml
-#- name: Setup the conf/hadoop-env.sh file
-#  template: src=hadoop-env.sh.j2 dest=/usr/local/hadoop/etc/hadoop/hadoop-env.sh
-#- name: Setup the conf/core-site.xml file
-#  template: src=core-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/core-site.xml
-#- name: Setup the conf/mapred-site.xml file
-#  template: src=mapred-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/mapred-site.xml
+- name: Setup the conf/hdfs-site.xml file
+  template: src=hdfs-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+- name: Setup the conf/hadoop-env.sh file
+  template: src=hadoop-env.sh.j2 dest=/usr/local/hadoop/etc/hadoop/hadoop-env.sh
+- name: Setup the conf/core-site.xml file
+  template: src=core-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/core-site.xml
+- name: Setup the conf/mapred-site.xml file
+  template: src=mapred-site.xml.j2 dest=/usr/local/hadoop/etc/hadoop/mapred-site.xml
 - name: Setup the ssh_config file
   template:
       src=ssh_config.j2

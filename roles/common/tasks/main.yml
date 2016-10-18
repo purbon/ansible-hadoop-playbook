@@ -1,7 +1,7 @@
 ---
 - name: Setup the etc/hosts file
   template: src=templates/hosts.j2 dest=/etc/hosts
-- name: ensure default-jdk is at the latest version
-  apt: name=default-jdk state=latest
+#- name: ensure default-jdk is at the latest version
+#  apt: name=openjdk-7-jdk state=latest install_recommends=no
 - name: ensure sshpass is at the latest version
-  apt: name=sshpass state=latest
+  apt: name=sshpass state=present
