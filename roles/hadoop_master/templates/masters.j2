@@ -1,1 +1,3 @@
-hadoop0
+{% for item in groups['master'] %}
+{{  hostvars[item]['hostname'] }}
+{% endfor %}

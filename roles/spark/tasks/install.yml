@@ -1,0 +1,22 @@
+---
+- name: install spark from remote source
+  unarchive:
+      src=pkg/spark-2.0.1-bin-hadoop2.7.tgz
+      dest="/usr/local/"
+      remote_src=no
+      owner=hdu
+      group=hadoop
+- name: setup symlink
+  file:
+    src:  /usr/local/spark-2.0.1-bin-hadoop2.7
+    dest: /usr/local/spark
+    state: link
+- name: Adding the hive home path in the rc file
+  lineinfile: 
+      dest={{home_directory}}/.bashrc 
+      regexp="^export HIVE_HOME\=\/usr\/local\/hive" 
+      line="export HIVE_HOME=/usr/local/hive"
+- name: Add local hive bin to $PATH
+  lineinfile: 
+    dest={{home_directory}}/.bashrc 
+    regexp="^export PATH\=\$HIVE_HOME\/bin" line="export PATH=$HIVE_HOME/bin:$PATH"

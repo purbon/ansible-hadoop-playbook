@@ -1,0 +1,3 @@
+---
+- name: Setup the conf/spark-env.sh file
+  template: src=spark-env.sh.j2 dest=/usr/local/spark/conf/spark-env.sh

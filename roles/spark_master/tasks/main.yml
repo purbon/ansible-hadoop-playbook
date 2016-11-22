@@ -1,0 +1,7 @@
+---
+- name: Setup the conf/slaves file
+  template:
+    src=slaves.j2
+    dest=/usr/local/spark/conf/slaves
+    owner=hdu
+    group=hadoop

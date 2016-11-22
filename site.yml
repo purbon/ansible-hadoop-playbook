@@ -7,26 +7,23 @@
   become: true
   roles:
     - common
+    - williamyeh.oracle-java
+  vars:
+    java_version: 8
+    java_set_javahome: true
 
-- name: Deploy the hadoop master nodes
-  hosts: hadoop_master
+- name: Configure and deploy the nodes
+  hosts: all
   remote_user: root
   become: true
   roles:
-    - hadoop_common
     - hadoop
+    - spark
 
-- name: configure and deploy the hadoop slaves nodes
-  hosts: hadoop_slave
-  remote_user: root
-  become: true
-  roles:
-    - hadoop_common
-    - hadoop
-
-- name: Config the hadoop master nodes
-  hosts: hadoop_master
+- name: Config the master nodes
+  hosts: master
   remote_user: root
   become: true
   roles:
     - hadoop_master
+    - spark_master

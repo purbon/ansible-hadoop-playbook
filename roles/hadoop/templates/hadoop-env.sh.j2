@@ -1,3 +1,4 @@
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export JAVA_HOME=/usr/lib/jvm/default-java
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
 export HADOOP_HEAPSIZE={{ heapsize }}
-export HADOOP_OPTS="-Xbootclasspath/p:/usr/lib/jvm/floatingdecimal-0.1.jar -XX:+UseConcMarkSweepGC -XX:+AggressiveOpts -XX:MaxPermSize=300M -XX:+CMSClassUnloadingEnabled -XX:SurvivorRatio=8 -XX:+ExplicitGCInvokesConcurrent -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/tmp/hadoop-hdfs-gc.log"
+export HADOOP_OPTS="-Xbootclasspath/p:/usr/lib/jvm/floatingdecimal-0.1.jar -XX:+UseConcMarkSweepGC -XX:+AggressiveOpts -XX:+CMSClassUnloadingEnabled -XX:SurvivorRatio=8 -XX:+ExplicitGCInvokesConcurrent -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/tmp/hadoop-hdfs-gc.log"

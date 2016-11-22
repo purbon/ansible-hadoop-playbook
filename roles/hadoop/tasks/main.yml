@@ -1,3 +1,7 @@
 ---
+- include: common_hadoop.yml
+  tags: [hadoop]
 - include: install_hadoop.yml
+  tags: [hadoop]
 - include: config_hadoop.yml
+  tags: [config, hadoop]

@@ -1,6 +1,6 @@
-{% for item in groups['hadoop_master'] %}
+{% for item in groups['master'] %}
 {{  hostvars[item]['hostname'] }}
 {% endfor %}
-{% for item in groups['hadoop_slave'] %}
+{% for item in groups['slave'] %}
 {{  hostvars[item]['hostname'] }}
 {% endfor %}

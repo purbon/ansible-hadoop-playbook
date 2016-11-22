@@ -1,0 +1,3 @@
+{% for item in groups['slave'] %}
+{{ hostvars[item]['hostname'] }}
+{% endfor %}

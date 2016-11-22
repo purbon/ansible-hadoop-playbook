@@ -5,3 +5,5 @@ ansible_user: vagrant
 hadoop_version: 2.7.3
 heapsize: 12278
 hdu_pass: $6$xmX/VxLbHvjJ$sOR9NP2xz9uCTiUTWtT2QKfiFoXUR7qwRBfx23k9uhBdFHwwCRWP0b8PE0Yqii7lydxxbaCMFtNV4l/pTDPGJ1
+home_directory: /home/hdu
+remote_user: root

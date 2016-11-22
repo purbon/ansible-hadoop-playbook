@@ -1,0 +1,6 @@
+---
+- name: Distribute the master SSH key to slave nodes
+  become: yes
+  become_user: hdu
+  command: sshpass -p voodoo ssh-copy-id -i /home/hdu/.ssh/id_rsa.pub -o StrictHostKeyChecking=no hdu@{{ item }}
+  with_items: "{{ groups['slave'] }}"

@@ -3,11 +3,11 @@
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 # Hadoop masters
-{% for item in groups['hadoop_master'] %}
+{% for item in groups['master'] %}
 {{ item }} {{  hostvars[item]['hostname'] }}
 {% endfor %}
 
 # Hadoop slaves
-{% for item in groups['hadoop_slave'] %}
+{% for item in groups['slave'] %}
 {{ item }} {{  hostvars[item]['hostname'] }}
 {% endfor %}
